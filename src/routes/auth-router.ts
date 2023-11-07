@@ -23,6 +23,7 @@ authRouter.post('/login',
 
 authRouter.post('/logout',
     authMW.verifyRefreshToken.bind(authMW),
+    inputValidationMw,
     authController.logoutUser.bind(authController))
 
 authRouter.post('/refresh-token',
